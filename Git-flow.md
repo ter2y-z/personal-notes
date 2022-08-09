@@ -26,6 +26,6 @@
 We should do code rebase once PR is approved.
 * `git pull` to update master branch
 * Checkout to your branch
-* `git rebase -l master`
+* `git rebase -i master`
 * Make adjustments to commit messages (use `reword` etc.) or simply save
 * `git push -f`
