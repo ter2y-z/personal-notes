@@ -29,6 +29,6 @@ merge
 click on shortcut "Prod pipeline approval" on slack  
 ![Screen Shot 2022-08-11 at 11 45 31 am](https://user-images.githubusercontent.com/109929798/184051210-2d33896e-6c36-47af-b987-249b071ea2bb.png)
 
-wait for all boxes are green:  
+click harness link - wait for all boxes are green:  
 ![Screen Shot 2022-08-18 at 10 12 13 am](https://user-images.githubusercontent.com/109929798/185265074-4743209d-0637-4e6f-93c1-5f6fc268d629.png)
 then shout out in the channel `xplore-release`
