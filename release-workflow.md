@@ -7,6 +7,8 @@ review chore pr
 merge chore pr  
 after testing, can see pr on /xplore/k8s  
 get approve & merge PR  
+check if changes happen on [st](https://xplore-staging.service.anz/)
+tell Amiee STG is completed
 ask Amiee please have a CR (change request)  
 get CR number (CHGXXXXX) from Aimee  
 create new branch "CHGXXXXX" on local xplore-k8s  
