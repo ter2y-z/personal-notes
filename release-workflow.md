@@ -1,3 +1,5 @@
+[Release workflow on Wiki](https://github.com/anzx/xplore-ui/wiki/Release-workflow)
+
 == staging ==
 go to chore  
 check the list  
