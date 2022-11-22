@@ -3,29 +3,29 @@
 [Release / Change Request process](https://confluence.service.anz/pages/viewpage.action?pageId=1185974461)
 
 == staging ==
-go to chore  T  
+go to chore  `Tuesday`  
 
-check the list  T
+check the list  `Tuesday`  
 
-wait for Aimee to confirm   T
+wait for Aimee to finish BVT on np  `Tuesday`  
 
-check chore pr   T
+check chore pr  `Tuesday`  
 
-review chore pr   T
+review chore pr  `Tuesday`  
 
-merge chore pr  T
+merge chore pr  `Tuesday`  
 
-after testing, can see pr on /xplore/k8s  T
+after testing, can see pr on /xplore/k8s  `Tuesday`  
 
-get approve & merge PR  T
+get approve & merge PR  `Tuesday`  
 
-check if changes happen on [st](https://xplore-staging.service.anz/).   W
+check if changes happen on [st](https://xplore-staging.service.anz/).   `Wednesday`  
 
-tell Amiee STG is completed.      W
+tell Amiee STG is completed.  `Wednesday`  
 
-ask Amiee please have a CR (change request)    T
+ask Amiee please have a CR (change request)  `Tuesday` /  `Wednesday`  
 
-get CR number (CHGXXXXX) from Aimee  T / W
+get CR number (CHGXXXXX) from Aimee  `Tuesday`  /  `Wednesday`  
 
 
 == production ==  
