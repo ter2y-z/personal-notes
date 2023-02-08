@@ -2,33 +2,27 @@
 
 [Release / Change Request process](https://confluence.service.anz/pages/viewpage.action?pageId=1185974461)
 
-== staging ==
-go to chore  `Tuesday`  
+## Deploy to staging environment
+1. Check the list on the chore releasing PR under ui repo  `Tuesday`  
 
-check the list  `Tuesday`  
+2. Wait for Aimee to finish BVT on np  `Tuesday`  
 
-wait for Aimee to finish BVT on np  `Tuesday`  
+3. Check, review and merge chore releasing PR  `Tuesday`  
 
-check chore pr  `Tuesday`  
+4. After merging the releasing PR, an automated PR should be on [xplore-k8](https://github.com/anzx/xplore-k8s)  `Tuesday`  
 
-review chore pr  `Tuesday`  
+5. Get approved and merge the automated PR on xplore-k8  `Tuesday`  
 
-merge chore pr  `Tuesday`  
+6. Check and test the changes on [staging](https://xplore-staging.service.anz/) to verify features from release notes   `Wednesday`  
 
-after testing, can see pr on /xplore/k8s  `Tuesday`  
+7. Let Amiee know STAGING is ready  `Wednesday`  
 
-get approve & merge PR  `Tuesday`  
+8. Ask Amiee please have a CR (change request)  `Tuesday` /  `Wednesday`  
 
-check if changes happen on [st](https://xplore-staging.service.anz/).   `Wednesday`  
-
-tell Amiee STG is completed.  `Wednesday`  
-
-ask Amiee please have a CR (change request)  `Tuesday` /  `Wednesday`  
-
-get CR number (CHGXXXXX) from Aimee  `Tuesday`  /  `Wednesday`  
+9. Get CR number (CHGXXXXX) from Aimee  `Tuesday`  /  `Wednesday`  
 
 
-== production ==  
+## Deploy to production environment
 xplore-k8s  
 send "Commencing PROD Deployment for UI v1.xx.xx (CHGXXXXXXX)" to slack channel : xplore-release  
 create PR on xplore-k8s  
