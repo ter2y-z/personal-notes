@@ -1,79 +1,111 @@
+# Preparation for Deployment
+## Cutting Release (Deploy from NP to STAGING)
 
-## Preparation of the deployment
-### Cutting release (deploy from NP to STAGING)
+1. Wait for Aimee to finish BVT on NP (Tuesday).
 
-1. Wait for Aimee to finish BVT on np  `Tuesday`
+2. Check the Release section for each repo (Tuesday):  
+   - UI: https://github.com/anzx/xplore-ui/releases
+   - BFF: https://github.com/anzx/xplore-backend/releases
+   - Codex: https://github.com/anzx/codex-jmix/releases
 
-2. Check the list on the Release section for each repo `Tuesday`  
-- ui: https://github.com/anzx/xplore-ui/releases
-- bff: https://github.com/anzx/xplore-backend/releases
-- codex: https://github.com/anzx/codex-jmix/releases
+3. Ensure an automated PR is created on [xplore-k8s](https://github.com/anzx/xplore-k8s) after each repo publishes a release.
+   - [Why I can't see an automated PR on k8s](#why-i-cant-see-an-automated-PR-on-k8s)
 
-3. An automated PR should be on [xplore-k8](https://github.com/anzx/xplore-k8s) after each repo publishing release
-   - [Why I can't see an automated PR on k8s](#deployment-on-xplore-k8s)
+4. Approve and merge the automated PRs on xplore-k8s (Tuesday).
 
-4. Get approved and merge the automated PRs on xplore-k8s  `Tuesday`  
+5. Check and test the changes on [**STAGING**](https://xplore-staging.service.anz/) to verify features from release notes (Tuesday/Wednesday).
 
-5. Check and test the changes on [**STAGING**](https://xplore-staging.service.anz/) to verify features from release notes   `Tuesday` /  `Wednesday`  
+6. Inform Aimee that **STAGING** is ready (Tuesday/Wednesday).
 
-6. Let Amiee know **STAGING** is ready  `Tuesday` /  `Wednesday`  
+7. Request Aimee to initiate a Change Request (CR) (Tuesday/Wednesday).
 
-7. Ask Amiee please have a CR (change request)  `Tuesday` /  `Wednesday`  
+8. Obtain the CR number (CHGXXXXX) and Release Notes from Aimee (Tuesday/Wednesday).
 
-8. Get CR number (CHGXXXXX) and Release Notes from Aimee  `Tuesday`  /  `Wednesday`
-
-# TO BE CONTINUE
-
-## Deployment
-1. Communicate with the primary support persons (usually one from Backend and one from Codex) to confirm the version deploying to prod
+# Deployment
+Confirm release details with the team/Aimee. Information can typically be found in the release documentation, like the example below:
 
 ![Screenshot 2023-02-23 at 8 44 13 am](https://user-images.githubusercontent.com/109929798/221045628-3dc1961d-c14e-415f-98b1-ee16bf7d589d.png)
 
-*We can know from the release note that*
+*Example from release notes:*
 - *Codex -> `v2.2.4`*
 - *Xplore UI -> `v1.83.0`*
 - *Xplore BFF -> `v1.32.3`*
 - *xp-cf-service-casegenerator -> `v2.6.0`*
 - *xp-cf-service-evidencegen -> `v2.6.0`*
 
-2. Send "Commencing PROD Deployment CHGXXXXXXX" to Slack channel: [#xplore-release](https://anzx.slack.com/archives/C0160MTKEP4)
+## Release on xplore-k8s
 
-### Deployment on xplore-k8s
-1. Change CR status to `Implement`
-![Screenshot 2023-06-29 at 11 22 42 am](https://github.com/TerryZhengANZx/personal-notes/assets/109929798/2d6ce01a-154c-4382-9e5a-8988cac6f339)
+1. Announce "Commencing PROD Deployment CHGXXXXXXX" in the Slack channel: [#xplore-release](https://anzx.slack.com/archives/C0160MTKEP4).
 
-2. Create a new branch with subject "CHGXXXXX" on [xplore-k8](https://github.com/anzx/xplore-k8s) and update the `xplore-k8s/environments/prod/versions.json` (Always good to compare it with `xplore-k8s/environments/staging/versions.json`)
+2. Change CR status to `Implement`.
 
-![screenshot_new_branch](https://user-images.githubusercontent.com/109929798/185264404-061f463d-f965-4c59-9b60-75ad0b910ccf.png)
+   ![Screenshot 2023-06-29 at 11 22 42 am](https://github.com/TerryZhengANZx/personal-notes/assets/109929798/2d6ce01a-154c-4382-9e5a-8988cac6f339)
 
-3. Raise a PR for this new branch / Wait for approve / Merge to `master` branch
+3. Create a new branch named "CHGXXXXX" on [xplore-k8s](https://github.com/anzx/xplore-k8s) and update `xplore-k8s/environments/prod/versions.json` (compare with `xplore-k8s/environments/staging/versions.json`).
 
-4. Go to [xplore-k8s/actions](https://github.com/anzx/xplore-k8s/actions), getting the gha pending link
+   ![screenshot_new_branch](https://user-images.githubusercontent.com/109929798/185264404-061f463d-f965-4c59-9b60-75ad0b910ccf.png)
 
-5. Now we get CR number, CR link and the gha link, we can go to the [#xplore-release](https://anzx.slack.com/archives/C0160MTKEP4) channel on Slack and click `Prod pipeline approval` under Shortcuts:
+4. Raise a PR for this new branch, wait for approval, then merge it to the `master` branch.
 
-Shout out in the channel and wait for approval.
+5. Go to [xplore-k8s/actions](https://github.com/anzx/xplore-k8s/actions) and find the new action running under `🕋 X Single Env CICD (KubeRaw)`. Click and open it to get the GHA URL.
 
-6. Go back to Harness and wait for all the boxes are green then we can ask Aimee, Jenny or Daisy to do the BVT for the prod.
+   ![Screenshot 2024-08-01 at 12 07 48 PM](https://github.com/user-attachments/assets/2baafb1f-30b8-43ab-a5df-339c1d923a40)
 
+6. With the CR number, CR link, and GHA URL, go to the [#xplore-release](https://anzx.slack.com/archives/C0160MTKEP4) channel on Slack and click `Prod pipeline approval` under Shortcuts.
 
-### Deployment on xplore-cloud-functions
+   ![Screenshot 2024-08-01 at 12 12 23 PM](https://github.com/user-attachments/assets/30f75a18-42a1-4f77-b393-2be34d818b21)
 
-We still need to deploy `xp-cf-service-casegenerator` and `xp-cf-service-evidencegen` according to the release notes. Sometimes it can be searched on Github to locate which repo it is or confirm it with the support members. In thise case, they're sitting in `xplore-cloud-functions`
+7. Wait for approval, which will trigger the continuation of the action.
+
+8. Once all actions are finished, verify the changes are on PROD and request Aimee to conduct another BVT on PROD.
+
+## Release on xplore-infra
+
+1. Confirm which workflow the PR needs to run. According to Ashitha:
+   > "Usually it comes up in the PR comments which component is being updated (Apromore, BigQuery, common, etc.) and we run the workflow accordingly."
+
+   Examples:
+   - [#1781](https://github.com/anzx/xplore-infra/pull/1781): Needs `🎪 CICD (BigQuery)`
+   - [#1760](https://github.com/anzx/xplore-infra/pull/1760): Needs `🌰 CICD (Dashboard)`, `🎪 CICD (BigQuery)`, `🍏 CICD (Apromore)`, `⛅️ CICD (Cloudfunction)`, `🐪 CICD (Common)`
+   - [#1773](https://github.com/anzx/xplore-infra/pull/1773): Confirm with the team if the comment section lacks information.
+
+2. Go to [Actions](https://github.com/anzx/xplore-infra/actions) and find the related workflows on the left-side list. Click `Run workflow` on the top-right.
+
+3. With the CR number, CR link, and GHA URL, go to the [#xplore-release](https://anzx.slack.com/archives/C0160MTKEP4) channel on Slack and click `Prod pipeline approval` under Shortcuts.
+
+## Release on xplore-cloud-functions (OLD)
+
+Deploy `xp-cf-service-casegenerator` and `xp-cf-service-evidencegen` as noted in the release notes. Verify the repo on GitHub or confirm with support members. In this case, they reside in `xplore-cloud-functions`.
 
 ![Screenshot 2023-02-28 at 4 08 00 pm](https://user-images.githubusercontent.com/109929798/221759637-d0f03b83-b46d-4004-8411-7e4461675bd2.png)
 
+1. Create a new branch named "CHGXXXXX" on [xplore-cloud-functions](https://github.com/anzx/xplore-cloud-functions) and update `xplore-cloud-functions/versions/prod.jsonnet`.
 
-1. Create a new branch with subject "CHGXXXXX" on [xplore-cloud-functions](https://github.com/anzx/xplore-cloud-function) and update the `xplore-cloud-functions/versions/prod.jsonnet`
+   ![Screenshot 2023-11-02 at 1 36 49 pm](https://github.com/TerryZhengANZx/personal-notes/assets/109929798/79721254-3be5-4352-9918-b291b405b734)
 
-![Screenshot 2023-11-02 at 1 36 49 pm](https://github.com/TerryZhengANZx/personal-notes/assets/109929798/79721254-3be5-4352-9918-b291b405b734)
+2. Raise a PR for this new branch, wait for approval, and merge it to the `master` branch.
 
-2. Raise a PR for this new branch / Wait for approve / Merge to `master` branch
+3. Go to [xplore-cloud-functions/actions](https://github.com/anzx/xplore-cloud-functions/actions) and find the related GHA link.
 
-3. Go to [xplore-cloud-functions/actions](https://github.com/anzx/xplore-cloud-functions/actions) and find the related gha link.
+4. With the CR number, CR link, and GHA link, go to the [#xplore-release](https://anzx.slack.com/archives/C0160MTKEP4) channel on Slack and click `Prod pipeline approval` under Shortcuts. Announce in the channel and wait for approval.
 
-4. Now we get CR number, CR link and the gha link, we can go to the [#xplore-release](https://anzx.slack.com/archives/C0160MTKEP4) channel on Slack and click `Prod pipeline approval` under Shortcuts:
+5. Monitor Harness until all boxes are green, then request Aimee, Jenny, or Daisy to perform BVT for PROD.
 
-Shout out in the channel and wait for approval.
 
-5. Go back to Harness and wait for all the boxes are green then we can ask Aimee, Jenny or Daisy to do the BVT for the prod.
+# Fequently ask
+<details>
+  <summary id="why-i-cant-see-an-automated-PR-on-k8s">Why I can't see an automated PR on k8s</summary>
+
+  ### Heading
+  1. Foo
+  2. Bar
+     * Baz
+     * Qux
+
+  ### Some Javascript
+  ```js
+  function logSomething(something) {
+    console.log('Something', something);
+  }
+  ```
+</details>
