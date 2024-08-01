@@ -92,20 +92,22 @@ Deploy `xp-cf-service-casegenerator` and `xp-cf-service-evidencegen` as noted in
 5. Monitor Harness until all boxes are green, then request Aimee, Jenny, or Daisy to perform BVT for PROD.
 
 
-# Fequently ask
+Sure, here's a polished version of the section:
+
+# Frequently Asked Questions
 <details>
-  <summary id="why-i-cant-see-an-automated-PR-on-k8s">Why I can't see an automated PR on k8s</summary>
+  <summary id="why-i-cant-see-an-automated-PR-on-k8s"><h2>Why can't I see an automated PR on k8s?</h2></summary>
 
-  ### Heading
-  1. Foo
-  2. Bar
-     * Baz
-     * Qux
+  The absence of an automated PR on k8s can be caused by different issues, varying case by case. Here's a breakdown:
 
-  ### Some Javascript
-  ```js
-  function logSomething(something) {
-    console.log('Something', something);
-  }
-  ```
+  - If you notice logs under a failed `create-pr` workflow, such as:
+    ```
+    ...
+    To https://github.com/anzx/xplore-k8s
+    ! [rejected]          auto-release-bff-staging -> auto-release-bff-staging (non-fast-forward)
+    error: failed to push some refs to 'https://github.com/anzx/xplore-k8s'
+    hint: Updates were rejected because the tip of your current branch is behind
+    ...
+    ```
+    This indicates that there is already a branch named `auto-release-xxx-staging` that previously failed to merge. As a result, the workflow failed to create a new branch with the same name.
 </details>
