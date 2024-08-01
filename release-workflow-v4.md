@@ -1,5 +1,5 @@
 # Preparation for Deployment
-## Cutting Release (Deploy from NP to STAGING)
+## :scissors: Cutting Release (Deploy from NP to STAGING)
 
 1. Wait for Aimee to finish BVT on NP (Tuesday).
 
@@ -33,7 +33,7 @@ Confirm release details with the team/Aimee. Information can typically be found 
 - *xp-cf-service-casegenerator -> `v2.6.0`*
 - *xp-cf-service-evidencegen -> `v2.6.0`*
 
-## Release on xplore-k8s
+## ☸ Release on xplore-k8s
 
 1. Announce "Commencing PROD Deployment CHGXXXXXXX" in the Slack channel: [#xplore-release](https://anzx.slack.com/archives/C0160MTKEP4).
 
@@ -59,7 +59,7 @@ Confirm release details with the team/Aimee. Information can typically be found 
 
 8. Once all actions are finished, verify the changes are on PROD and request Aimee to conduct another BVT on PROD.
 
-## Release on xplore-infra
+## 🚧 Release on xplore-infra
 
 1. Confirm which workflow the PR needs to run. According to Ashitha:
    > "Usually it comes up in the PR comments which component is being updated (Apromore, BigQuery, common, etc.) and we run the workflow accordingly."
@@ -73,7 +73,7 @@ Confirm release details with the team/Aimee. Information can typically be found 
 
 3. With the CR number, CR link, and GHA URL, go to the [#xplore-release](https://anzx.slack.com/archives/C0160MTKEP4) channel on Slack and click `Prod pipeline approval` under Shortcuts.
 
-## Release on xplore-cloud-functions (OLD)
+## :cloud: Release on xplore-cloud-functions (OLD)
 
 Deploy `xp-cf-service-casegenerator` and `xp-cf-service-evidencegen` as noted in the release notes. Verify the repo on GitHub or confirm with support members. In this case, they reside in `xplore-cloud-functions`.
 
