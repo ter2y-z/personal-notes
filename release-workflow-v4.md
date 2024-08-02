@@ -1,5 +1,6 @@
-# Preparation for Deployment
-## :scissors: Cutting Release (Deploy from NP to STAGING)
+# Preparation
+
+:scissors: We need to cut release (deploy from NP to STAGING) for the repos.
 
 1. Wait for Aimee to finish BVT on NP (Tuesday).
 
@@ -59,9 +60,15 @@ Confirm release details with the team/Aimee. Information can typically be found 
 
 8. Once all actions are finished, verify the changes are on PROD and request Aimee to conduct another BVT on PROD.
 
+
+
+
+
 ## 🚧 Release on xplore-infra
 
-1. Confirm which workflow the PR needs to run. According to Ashitha:
+1. At the beginning, ask the whole team to confirm what changes need to be include in the CR. Then confirm all the information with Aimee.
+
+2. Confirm which workflow the PR needs to run. According to Ashitha:
    > "Usually it comes up in the PR comments which component is being updated (Apromore, BigQuery, common, etc.) and we run the workflow accordingly."
 
    Examples:
@@ -69,9 +76,13 @@ Confirm release details with the team/Aimee. Information can typically be found 
    - [#1760](https://github.com/anzx/xplore-infra/pull/1760): Needs `🌰 CICD (Dashboard)`, `🎪 CICD (BigQuery)`, `🍏 CICD (Apromore)`, `⛅️ CICD (Cloudfunction)`, `🐪 CICD (Common)`
    - [#1773](https://github.com/anzx/xplore-infra/pull/1773): Confirm with the team if the comment section lacks information.
 
-2. Go to [Actions](https://github.com/anzx/xplore-infra/actions) and find the related workflows on the left-side list. Click `Run workflow` on the top-right.
+3. Go to [Actions](https://github.com/anzx/xplore-infra/actions) and find the related actions which is waiting. For example, for the PR #1781, we should click `🎪 CICD (BigQuery)` on the left handside menu. Then we can find it waiting in the list:
+  ![Screenshot 2024-08-02 at 11 54 58 AM](https://github.com/user-attachments/assets/4000aa67-867d-4d01-9d1d-107840eca1a9)
 
-3. With the CR number, CR link, and GHA URL, go to the [#xplore-release](https://anzx.slack.com/archives/C0160MTKEP4) channel on Slack and click `Prod pipeline approval` under Shortcuts.
+4. Click the workflow, then click the pipeline that waiting for approval and get the GHA url:
+   ![Screenshot 2024-08-02 at 11 56 49 AM](https://github.com/user-attachments/assets/9a2eab2f-4428-422b-b8e1-620fbe00896e)
+
+5. With the CR number, CR link, and GHA URL, go to the [#xplore-release](https://anzx.slack.com/archives/C0160MTKEP4) channel on Slack and click `Prod pipeline approval` under Shortcuts.
 
 ## :cloud: Release on xplore-cloud-functions (OLD)
 
