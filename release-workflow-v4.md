@@ -62,8 +62,6 @@ Confirm release details with the team/Aimee. Information can typically be found 
 
 
 
-
-
 ## 🚧 Release on xplore-infra
 
 1. At the beginning, ask the whole team to confirm what changes need to be include in the CR. Then confirm all the information with Aimee.
@@ -103,8 +101,15 @@ Deploy `xp-cf-service-casegenerator` and `xp-cf-service-evidencegen` as noted in
 5. Monitor Harness until all boxes are green, then request Aimee, Jenny, or Daisy to perform BVT for PROD.
 
 
-Sure, here's a polished version of the section:
+# After BVT
+1. Go to the CR page and load the related lists at the bottom of the page
+![Screenshot 2024-09-13 at 11 34 39 AM](https://github.com/user-attachments/assets/4e169539-c93f-439f-9ee1-b976b5cffcc7)
 
+2. Click the tasks assign to you.
+3. Click the `Closure Information` tab at the bottom of page.
+4. Update the close code to success and just simply input `Completed` to Close notes.
+
+   
 # Frequently Asked Questions
 <details>
   <summary id="why-i-cant-see-an-automated-PR-on-k8s"><h2>Why can't I see an automated PR on k8s?</h2></summary>
