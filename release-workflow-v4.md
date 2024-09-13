@@ -103,10 +103,11 @@ Deploy `xp-cf-service-casegenerator` and `xp-cf-service-evidencegen` as noted in
 
 # After BVT
 1. Go to the CR page and load the related lists at the bottom of the page
-![Screenshot 2024-09-13 at 11 34 39 AM](https://github.com/user-attachments/assets/4e169539-c93f-439f-9ee1-b976b5cffcc7)
+   ![Screenshot 2024-09-13 at 11 34 39 AM](https://github.com/user-attachments/assets/4e169539-c93f-439f-9ee1-b976b5cffcc7)
 
 2. Click the tasks assign to you.
 3. Click the `Closure Information` tab at the bottom of page.
+   ![Screenshot 2024-09-13 at 11 35 54 AM](https://github.com/user-attachments/assets/dfb38f60-7155-401f-b7d3-7c3cd9ebe8ff)
 4. Update the close code to success and just simply input `Completed` to Close notes.
 
    
